@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="email.jpg" alt="3D Cube" />
+    </div>
+    <div class="right">
+      <div class="form-box">
+        <h2>Log In</h2>
+        <p class="sub">Enter your email and password to login our dashboard.</p>
+        <form id="loginForm">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="Enter your Email" required />
+
+          <label>Password</label>
+          <div class="password-box">
+            <input type="password" id="password" placeholder="Enter your Password" required />
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+          </div>
+
+          <button type="submit">Sign In</button>
+
+          <p class="error-message" id="errorMessage"></p>
+
+          <div class="bottom-links">
+            <div class="link-row">
+              <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+            <div class="link-row">
+              <a href="#">Forgot Password?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("password");
+      password.type = password.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>
